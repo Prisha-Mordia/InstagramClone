@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="../public/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.4.6/tailwind.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- nav -->
+  <nav class="border-b px-4 py-2 bg-white">
+    <div class="flex flex-wrap items-center justify-between md:justify-around">
+      <!-- logo -->
+      <a href="/"><img class="h-10"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/150px-Instagram_logo.svg.png"
+          alt="instagram" /></a>
+
+      <!-- search-->
+      <div class="relative hidden sm:block text-gray-500">
+        <input
+          class="search-bar max-w-xs border rounded bg-gray-200 px-4 text-center outline-none focus:border-gray-400"
+          type="search" placeholder="Search" />
+        <i class="fa fa-search absolute top-0 left-0 ml-12 mt-1"></i>
+      </div>
+    </div>
+  </nav>
+
+  <main class="bg-gray-100 bg-opacity-25">
+    <div class="lg:w-8/12 lg:mx-auto mb-8">
+      <header class="flex flex-wrap items-center p-4 md:py-8">
+        <div class="md:w-3/12 md:ml-16">
+          <!-- profile image -->
+          <img class="w-20 h-20 md:w-40 md:h-40 object-cover rounded-full border-2 border-pink-600 p-1"
+            src="<%= user.pfp %>" alt="profile" />
+        </div>
+
+        <!-- profile meta -->
+        <div class="w-8/12 md:w-7/12 ml-4">
+          <div class="md:flex md:flex-wrap md:items-center mb-4">
+            <h2 class="text-3xl inline-block font-light md:mr-2 mb-2 sm:mb-0">
+              <%= user.username %>
+            </h2>
+
+            <!-- follow button -->
+            <!-- Button trigger modal -->
+            <!-- <button type="button"
+              class="bg-blue-500 px-2 py-1 text-white font-semibold text-sm rounded block text-center sm:inline-block block"
+              data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              EDIT
+            </button> -->
+            <% if (currentUser.username===user.username) { %>
+              <a href="#"
+                class="px-2 py-1 font-semibold text-sm rounded border border-secondary block text-center sm:inline-block block"
+                data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit</a>
+              <% } else { %>
+                <a href="#"
+                  class="bg-blue-500 px-2 py-1 text-white font-semibold text-sm rounded block text-center sm:inline-block block">Follow</a>
+                <% } %>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="staticBackdropLabel">
+                            Edit Profile
+                          </h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form method="post" action="/profile" enctype="multipart/form-data">
+                            <input type="hidden" name="id" value="<%= user.id %>" />
+                            <div class="mb-3">
+                              <label for="profilePicture" class="form-label">Profile Picture</label>
+                              <input type="file" class="form-control" id="profilePicture" name="image" />
+                            </div>
+                            <div class="mb-3">
+                              <label for="name" class="form-label">Name</label>
+                              <input type="text" class="form-control" id="name" name="name" value="<%= user.name %>"
+                                placeholder="Enter your name" required />
+                            </div>
+                            <div class="mb-3">
+                              <!-- <label for="username" class="form-label">Username</label> -->
+                              <input type="hidden" class="form-control" id="username" name="username"
+                                value="<%= user.username %>" placeholder="Enter your username" required />
+                            </div>
+                            <div class="mb-3">
+                              <label for="bio" class="form-label">Bio</label>
+                              <textarea class="form-control" id="bio" name="bio" rows="3"
+                                placeholder="Enter your bio"><%= user.bio %></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                              Save Changes
+                            </button>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Understood</button> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          </div>
+
+          <!-- post, following, followers list for medium screens -->
+          <ul class="hidden md:flex space-x-8 mb-4">
+            <li>
+              <span class="font-semibold">136</span>
+              posts
+            </li>
+
+            <li>
+              <span class="font-semibold">40.5k</span>
+              followers
+            </li>
+            <li>
+              <span class="font-semibold">302</span>
+              following
+            </li>
+          </ul>
+
+          <!-- user meta form medium screens -->
+          <div class="hidden md:block">
+            <h1 class="font-semibold">
+              <%= user.name %>
+            </h1>
+            <span>
+              <%= user.bio %>
+            </span>
+          </div>
+        </div>
+
+        <!-- user meta form small screens -->
+        <div class="md:hidden text-sm my-2">
+          <h1 class="font-semibold">
+            <%= user.name %>
+          </h1>
+          <span>
+            <%= user.bio %>
+          </span>
+        </div>
+      </header>
+
+      <!-- posts -->
+      <div class="px-px md:px-3">
+        <!-- user following for mobile only -->
+        <ul class="flex md:hidden justify-around space-x-8 border-t text-center p-2 text-gray-600 leading-snug text-sm">
+          <li>
+            <span class="font-semibold text-gray-800 block">136</span>
+            posts
+          </li>
+
+          <li>
+            <span class="font-semibold text-gray-800 block">40.5k</span>
+            followers
+          </li>
+          <li>
+            <span class="font-semibold text-gray-800 block">302</span>
+            following
+          </li>
+        </ul>
+
+        <!-- insta freatures -->
+        <ul
+          class="flex items-center justify-around md:justify-center space-x-12 uppercase tracking-widest font-semibold text-xs text-gray-600 border-t">
+          <!-- posts tab is active -->
+          <li class="md:border-t md:border-gray-700 md:-mt-px md:text-gray-700">
+            <a class="inline-block p-3" href="#">
+              <i class="fas fa-th-large text-xl md:text-xs"></i>
+              <span class="hidden md:inline">post</span>
+            </a>
+          </li>
+          <li>
+            <a class="inline-block p-3" href="#">
+              <i class="far fa-square text-xl md:text-xs"></i>
+              <span class="hidden md:inline">igtv</span>
+            </a>
+          </li>
+          <li>
+            <a class="inline-block p-3" href="#">
+              <i class="fas fa-user border border-gray-500 px-1 pt-1 rounded text-xl md:text-xs"></i>
+              <span class="hidden md:inline">tagged</span>
+            </a>
+          </li>
+        </ul>
+        <!-- flexbox grid -->
+        <div class="flex flex-wrap -mx-px md:-mx-3">
+          <!-- column -->
+          <% posts.forEach((post)=> { %>
+            <div class="w-1/3 p-px md:px-3">
+              <a href="#">
+                <article class="post bg-gray-100 text-white relative pb-full md:mb-6">
+                  <img class="w-full h-full absolute left-0 top-0 object-cover"
+                    src="<%= post.image.replace(/\\/g, '/') %>" alt="image" />
+                  <!-- overlay-->
+                  <div class="overlay bg-gray-800 bg-opacity-25 w-full h-full absolute left-0 top-0 hidden">
+                    <div class="flex justify-center items-center space-x-4 h-full">
+                      <span class="p-2">
+                        <i class="fas fa-heart"></i>
+                        112K
+                      </span>
+
+                      <span class="p-2">
+                        <i class="fas fa-comment"></i>
+                        2,090
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </a>
+            </div>
+            <% }) %>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

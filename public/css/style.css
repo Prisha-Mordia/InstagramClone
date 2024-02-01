@@ -1,0 +1,933 @@
+/* Your CSS here */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "-apple-system", BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+}
+
+/* ********************************** LOGIN-PAGE ************************************************  */
+.content-container {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+}
+
+.instagram-logo {
+  display: block;
+  margin: auto;
+  width: 80%;
+}
+
+input[type="text"],
+input[type="password"] {
+  background-color: rgb(250, 250, 250);
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: block;
+  font-family: "-apple-system", BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  height: 38px;
+  margin: 5px auto;
+  padding-left: 7px;
+  width: 270px;
+}
+
+input[type="submit"] {
+  background: rgb(0, 149, 246);
+  border: none;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: white;
+  display: block;
+  height: 32px;
+  margin: 15px auto;
+  width: 270px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.line-break {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  height: 15px;
+  justify-content: space-between;
+  margin: auto;
+  width: 270px;
+}
+
+.line {
+  background: rgb(219, 219, 219);
+  height: 1px;
+  width: 40%;
+}
+
+.or,
+footer a,
+footer p,
+select {
+  color: #737373;
+}
+
+.or {
+  text-transform: uppercase;
+}
+
+.facebook-login-container,
+.forgot-password,
+.sign-up-container {
+  margin: 30px;
+  text-align: center;
+}
+
+.facebook-login {
+  color: #385185;
+  font-weight: 600;
+}
+
+.facebook-icon {
+  margin: -3px 5px;
+  width: 16px;
+}
+
+.forgot-password {
+  color: #00376b;
+  font-size: 12px;
+}
+
+.sign-up-container {
+  margin: 50px;
+}
+
+.get-the-app {
+  margin: 50px;
+  text-align: center;
+}
+
+.get-the-app-image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.get-the-app-image {
+  height: 40px;
+  margin: 5px;
+  width: 135px;
+}
+
+footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 12px;
+  list-style-type: none;
+  justify-content: center;
+}
+
+footer li {
+  margin: 10px;
+}
+
+select {
+  border: none;
+  margin-right: 15px;
+}
+
+.language-copyright-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 40px;
+}
+
+@media screen and (min-width: 451px) {
+  .content-container {
+    margin-top: 30px;
+  }
+
+  .log-in-container,
+  .sign-up-container {
+    border: solid rgb(219, 219, 219) 1px;
+    box-sizing: border-box;
+    margin: 10px auto;
+    width: 350px;
+  }
+
+  .sign-up-container {
+    align-items: center;
+    display: flex;
+    height: 63px;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 876px) {
+  .container {
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 32px auto;
+    width: 870px;
+  }
+
+  .content-container {
+    width: 50%;
+  }
+
+  .image-container {
+    background: url("https://assets.codepen.io/6060109/IG-phone.jpeg");
+    background-size: contain;
+    height: 580px;
+    width: 380px;
+  }
+}
+
+/* ********************************** SIGN-UP-PAGE ************************************************  */
+#SignupContainer {
+  border: 1px solid #ddd;
+  width: 350px;
+  margin: 12px auto;
+  background-color: #fff;
+  overflow: visible;
+}
+
+.signupBox {
+  padding: 0px 40px;
+}
+
+header h2 {
+  font-family: "Amita", cursive;
+  font-size: 40px;
+  margin: 15px 0px 5px;
+  text-align: center;
+  color: #262626;
+}
+
+header p {
+  text-align: center;
+  line-height: 20px;
+  color: #8e8e8e;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+header button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e90ff;
+  color: #fff;
+  border: none;
+  width: 100%;
+  margin: 20px 0px;
+  padding: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  outline: none;
+  font-family: "Segoe UI", sans-serif;
+  cursor: pointer;
+}
+
+.fab {
+  font-size: 18px;
+  margin: 0 8px;
+}
+
+header button:active {
+  opacity: 0.6;
+}
+
+.seperator {
+  color: #8e8e8e;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.seperator {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.seperator hr {
+  width: 41%;
+  display: inline-block;
+  border-top: 1px #dbdbdb solid;
+  position: relative;
+  top: 0;
+}
+
+.seperator hr:first-child {
+  margin-right: 5%;
+}
+
+.seperator hr:last-child {
+  margin-left: 5%;
+}
+
+form input {
+  font-size: 12px;
+  width: 100%;
+  height: 38px;
+  margin: 3px 0px;
+  padding: 10px 8px;
+  border: 1px #dbdbdb solid;
+  border-radius: 4px;
+  background-color: #fafafa;
+  outline: none;
+}
+
+form input:focus {
+  border-color: #999;
+}
+
+form input::placeholder {
+  color: #9f9f9f;
+}
+
+form button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e90ff;
+  color: #fff;
+  border: none;
+  width: 100%;
+  margin: 20px 0px;
+  padding: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  outline: none;
+  font-family: "Segoe UI", sans-serif;
+  cursor: pointer;
+}
+
+.signupBox footer {
+  font-size: 12px;
+  color: #8e8e8e;
+  text-align: center;
+  padding: 10px 10px 40px;
+}
+
+footer p a {
+  text-decoration: none;
+  color: #8e8e8e;
+  font-weight: 600;
+}
+
+#BottomContainer {
+  border: 1px solid #ddd;
+  width: 350px;
+  margin: 10px auto 20px;
+  overflow: auto;
+  background-color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
+
+#BottomContainer p {
+  margin: 25px;
+}
+
+#BottomContainer p a {
+  text-decoration: none;
+  color: #0095f6;
+}
+
+#AppsContainer {
+  text-align: center;
+  font-size: 14px;
+  padding-bottom: 25px;
+  width: 350px;
+  margin: 0px auto 40px;
+}
+
+#AppsContainer img {
+  display: inline-block;
+  height: auto;
+  width: 40%;
+  padding: 20px 2px;
+  cursor: pointer;
+}
+
+#LastContainer {
+  margin: 0px auto 40px;
+  width: 80%;
+}
+
+#LastContainer .links {
+  display: inline-block;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 24px;
+  width: 70%;
+}
+
+#LastContainer .links a {
+  text-decoration: none;
+  color: #00376b;
+  padding: 0px 8px;
+}
+
+#LastContainer .copyright {
+  display: inline-block;
+  width: 29%;
+  text-align: center;
+}
+
+#LastContainer .copyright p {
+  color: #8e8e8e;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  #AppsContainer {
+    margin-bottom: 12px;
+  }
+  #LastContainer {
+    margin: 0px auto;
+  }
+
+  #LastContainer .links,
+  #LastContainer .copyright {
+    margin: 2px auto;
+    width: 100%;
+  }
+
+  #LastContainer .copyright p {
+    margin-bottom: 10px;
+  }
+}
+
+/* ********************************** INDEX-PAGE ************************************************  */
+li {
+  list-style: none;
+}
+input {
+  text-align: center;
+}
+
+/*LEFT MENU CODES HERE*/
+.leftMenu {
+  width: 244px;
+  height: 100vh;
+  position: fixed;
+  border-right: 1px solid #e3e2e2;
+}
+.leftMenu i {
+  font-size: 1.4rem;
+  margin-right: 0.9rem;
+  padding: 0.3rem 0 0 0;
+}
+.middleMenu {
+  margin: 0 0 0.7rem 1rem;
+  font-size: 01rem;
+  height: 2.5rem;
+  width: 12rem;
+  padding: 0.3rem 0 0 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.bottomMenu {
+  margin: 0.5rem 0 0 1rem;
+  font-size: 1rem;
+  height: 2.5rem;
+  width: 12rem;
+  padding: 0.4rem 0 0 0.5rem;
+  border-radius: 0.5rem;
+}
+.instagramTextLogo {
+  width: 6.8rem;
+  margin: 2.1em 1.3rem;
+}
+#threads {
+  margin-top: 4.3rem;
+}
+#home:hover,
+#search:hover,
+#discover:hover,
+#reels:hover,
+#messages:hover,
+#notifications:hover,
+#create:hover,
+#profile:hover,
+#threads:hover,
+#more:hover {
+  background-color: #f1f1f1;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+/* STORY CODES HERE */
+
+.storyArea {
+  width: 41.3%;
+  height: 5rem;
+  position: absolute;
+  left: 23%;
+  margin-top: 3rem;
+  text-align: center;
+  overflow: hidden;
+}
+.storyArea p {
+  padding-top: 4rem;
+  font-size: 0.8rem;
+  color: #707070;
+}
+.stories {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: rgb(239, 239, 239);
+  border-radius: 50px;
+  display: inline-block;
+  margin-right: 1rem;
+  border: 3px solid #f9529a;
+  cursor: pointer;
+}
+
+/*POST CODES HERE*/
+
+.post1 {
+  width: 30.8%;
+  position: absolute;
+  left: 30%;
+  top: 11.4rem;
+}
+.postPP {
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 100%;
+  margin: 0.6rem 0.6rem;
+  border: 1px solid #f9529a;
+  cursor: pointer;
+}
+.postID {
+  position: absolute;
+  top: 0.8rem;
+  left: 3.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.firstPost {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+}
+.reactions li {
+  font-size: 1.3rem;
+  display: inline-block;
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+}
+.stick {
+  width: 30.8%;
+  height: 1px;
+  position: absolute;
+  background-color: #cccccc;
+  left: 30%;
+  top: 67rem;
+  margin: 1rem 0 1.2rem 0;
+}
+
+.post2 {
+  width: 30.8%;
+  position: absolute;
+  left: 30%;
+  top: 69rem;
+}
+.postPP2 {
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 100%;
+  margin: 0.6rem 0.6rem;
+  border: 1px solid #f9529a;
+  cursor: pointer;
+}
+.postID2 {
+  position: absolute;
+  top: 0.8rem;
+  left: 3.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.firstPost2 {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+}
+.reactions2 li {
+  font-size: 1.3rem;
+  display: inline-block;
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+}
+.dots i {
+  position: absolute;
+  right: 1rem;
+  margin-top: -1.9rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/*SUGGESTED USERS CODES HERE*/
+
+.suggestions {
+  width: 20%;
+  height: 520px;
+  position: absolute;
+  right: 9%;
+  top: 3rem;
+}
+.sugProfile {
+  width: 2.7rem;
+  height: 2.7rem;
+  border: 1px solid #a8a8a8;
+  border-radius: 100%;
+  margin: 1rem 0 0rem 0.5rem;
+}
+.sugUser {
+  margin: 0.7rem 0 0 3.5rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.sugFollow {
+  position: absolute;
+  font-size: 0.7rem;
+  color: rgb(102, 184, 255);
+  font-weight: bold;
+  cursor: pointer;
+  right: 1rem;
+  margin: -0.9rem 0 0 0;
+}
+.sugLinks {
+  font-size: 0.8rem;
+  color: #d8d8d8;
+  cursor: pointer;
+  margin: 1rem 0 0 0.5rem;
+  line-height: 1.2rem;
+}
+
+/*RESPONSIVE DESIGN CODES HERE*/
+
+.mobileLeftMenu {
+  height: 100vh;
+  width: 4.3rem;
+  border: 1px solid rgb(214, 214, 214);
+  position: fixed;
+}
+.mobileBtns i,
+.mbottomMenu i {
+  font-size: 1.4rem;
+  margin-right: 0.9rem;
+  padding: 0.3rem 0 0 0;
+}
+.mobileBtns {
+  margin: 0 0 0.7rem 1rem;
+  font-size: 01rem;
+  height: 2.5rem;
+  width: 12rem;
+  padding: 0.3rem 0 0 0.5rem;
+  border-radius: 0.5rem;
+}
+.minstagramLogo {
+  width: 2.7rem;
+  margin: 2.2em 1rem;
+}
+#mbars {
+  margin-top: 7rem;
+}
+
+.mbottomMenu {
+  margin: 0.5rem 0 0 1rem;
+  font-size: 1rem;
+  height: 2.5rem;
+  width: 12rem;
+  padding: 0.4rem 0 0 0.5rem;
+  border-radius: 0.5rem;
+}
+.mobileHeader {
+  width: 100%;
+  height: 3.8rem;
+  border-bottom: 1px solid #d8d8d8;
+  position: fixed;
+  background-color: #fff;
+}
+.mobileTextLogo {
+  width: 6.8rem;
+  margin: 0.7em 1rem;
+}
+.mobileHeader i {
+  font-size: 1.5rem;
+  position: absolute;
+  right: 0;
+  margin: 1rem;
+}
+.mobileHeader input {
+  width: 35%;
+  font-size: 1.2rem;
+  color: #a8a8a8;
+  background-color: #eaeaea;
+  position: absolute;
+  right: 3rem;
+  margin: 1rem;
+  border: none;
+  padding: 0.1rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+}
+.bottomBtns {
+  width: 100%;
+  height: 3.5rem;
+  background-color: #fff;
+  border-top: 1px solid #edecec;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+}
+
+.bBtns {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+.bBtns i {
+  font-size: 1.5rem;
+  margin: 0.5rem;
+
+  overflow: hidden;
+}
+.save i {
+  position: absolute;
+  right: 0;
+  bottom: 7rem;
+  margin-right: 0.5rem;
+}
+.save2 i {
+  position: absolute;
+  right: 0;
+  bottom: 13.5rem;
+  margin-right: 0.5rem;
+}
+#mhome,
+#msearch,
+#mdiscover,
+#mreels,
+#mmessages,
+#mnotifications,
+#mcreate,
+#mprofile,
+#mthreads,
+#mmore,
+#mbars {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+#mhome:hover,
+#msearch:hover,
+#mdiscover:hover,
+#mreels:hover,
+#mmessages:hover,
+#mnotifications:hover,
+#mcreate:hover,
+#mprofile:hover,
+#mthreads:hover,
+#mmore:hover,
+#mbars:hover {
+  background-color: #f1f1f1;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+/*MEDIA CODES HERE*/
+
+@media (max-width: 432px) {
+  .bottomBtns {
+    padding: 0.5rem 01rem;
+  }
+  .bBtns i {
+    font-size: 1.3rem;
+    margin: 0.1rem;
+
+    overflow: hidden;
+  }
+}
+@media (max-width: 347px) {
+  .bottomBtns {
+    padding: 0.1rem 0.1rem;
+  }
+  .bBtns i {
+    font-size: 1.3rem;
+    margin: 0rem;
+    overflow: hidden;
+  }
+}
+@media (max-width: 768px) {
+  .bottomBtns {
+    padding: 0.5rem;
+  }
+  .bBtns i {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 2000px) {
+  .mobileHeader {
+    display: none;
+  }
+  .mBottomBtns {
+    display: none;
+  }
+  .mobileLeftMenu {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1263px) {
+  .leftMenu {
+    display: none;
+  }
+  .mobileBtns i {
+    font-size: 1.4rem;
+    margin-right: 0.9rem;
+    padding: 0.3rem 0 0 0;
+  }
+  .mobileLeftMenu {
+    display: block;
+  }
+}
+@media only screen and (max-width: 1160px) {
+  .rightPanel {
+    display: none;
+  }
+  .post1 {
+    width: 42%;
+    position: absolute;
+    left: 32%;
+    top: 11.4rem;
+  }
+
+  .stick {
+    width: 42%;
+    left: 32%;
+    top: 69rem;
+  }
+
+  .post2 {
+    width: 42%;
+    position: absolute;
+    left: 32%;
+    top: 71rem;
+  }
+  .storyArea {
+    width: 55%;
+    height: 5rem;
+    position: absolute;
+    left: 23%;
+    margin-top: 3rem;
+    text-align: center;
+    overflow: hidden;
+  }
+}
+@media only screen and (max-width: 766px) {
+  .mobileLeftMenu {
+    display: none;
+  }
+  .post1 {
+    width: 62%;
+    position: absolute;
+    left: 19%;
+    top: 11.4rem;
+  }
+
+  .stick {
+    width: 62%;
+    left: 19%;
+    top: 69rem;
+  }
+
+  .post2 {
+    width: 62%;
+    position: absolute;
+    left: 19%;
+    top: 71rem;
+  }
+
+  .storyArea {
+    width: 80%;
+    height: 5rem;
+    position: absolute;
+    left: 10%;
+    margin-top: 5.5rem;
+    text-align: center;
+    overflow: hidden;
+  }
+  .mobileHeader {
+    display: block;
+  }
+  .mBottomBtns {
+    display: block;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .post1 {
+    width: 100%;
+    position: absolute;
+    top: 11.4rem;
+    left: 0rem;
+  }
+
+  .stick {
+    width: 100%;
+    top: 69rem;
+    left: 0rem;
+  }
+
+  .post2 {
+    width: 100%;
+    position: absolute;
+    top: 71rem;
+    left: 0rem;
+  }
+  .storyArea {
+    width: 90%;
+    left: 1rem;
+    height: 5rem;
+    position: absolute;
+    margin-top: 5.5rem;
+    text-align: center;
+    overflow: hidden;
+  }
+}
+
+/*THE END*/
+
+
+
+
+/* ********************************** PROFILE-PAGE ************************************************  */
+
+.pb-full {
+  padding-bottom: 100%;
+}
+
+/* hide search icon on search focus */
+.search-bar:focus + .fa-search{
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .post:hover .overlay {
+    display: block;
+  }
+}
